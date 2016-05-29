@@ -1,12 +1,11 @@
-[firefox]: https://ftp.mozilla.org/pub/firefox/releases/31.0/
+[chrome]: chrome version above 41.0
 [maven]: http://maven.apache.org/
 [java]: https://www.java.com/ru/download/help/download_options.xml
 
-## News360.com login form autotests (test task)
 
 ### Getting Started
 
-To run tests you need to install [maven][maven] version 3.1.1 or above, [java][java], git and [firefox][firefox].
+To run tests you need to install [maven][maven] version 3.1.1 or above, [java][java], git and [chrome][chrome].
 
 To generate Allure Report you should perform following steps:
 
