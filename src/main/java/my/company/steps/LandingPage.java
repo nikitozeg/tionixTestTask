@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import ru.yandex.qatools.allure.annotations.Step;
 
+import static my.company.steps.Locators.PAYMENTS_LOCATOR;
+
 /**
  * @author Nikita Ivanov tazg@ya.ru
  *         Date: 6.02.16
@@ -12,33 +14,28 @@ import ru.yandex.qatools.allure.annotations.Step;
 public class LandingPage {
 
     private WebDriver driver;
+    static String currentURL1;
+
+    By paymentsBtn = By.xpath(PAYMENTS_LOCATOR);
+
 
     public LandingPage(WebDriver driver) {
         this.driver = driver;
-    }
 
-    By newUserRadioBtnLocator = By.id("ap_signin_create_radio");
-    By emailInputLocator = By.id("ap_email");
-    By signInButtonLocator = By.id("signInSubmit-input");
-
-
-    @Step
-    public void userTypeEmailInForm(String email) {
-        driver.findElement(newUserRadioBtnLocator).click();
-        driver.findElement(emailInputLocator).sendKeys(email);
-    }
-
-    @Step
-    public void userClickSignInBtn() {
-        driver.findElement(signInButtonLocator).click();
     }
 
 
     @Step
-    public CredentialsPage goToCredentialPage(String email) {
-        userTypeEmailInForm(email);
-        userClickSignInBtn();
-        return new CredentialsPage(driver);
+    public void userClicksOnPaymentLink() {
+        Common.clickOnElement(paymentsBtn, driver);
+
+    }
+
+
+    @Step
+    public PaymentsPage goToPaymentsPage() {
+        userClicksOnPaymentLink();
+        return new PaymentsPage(driver);
     }
 
 }

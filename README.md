@@ -10,7 +10,7 @@ To run tests you need to install [maven][maven] version 3.1.1 or above, [java][j
 To generate Allure Report you should perform following steps:
 
 ```bash
-$ git clone git@github.com:nikitozeg/news360-test-task.git
+$ git clone git@github.com:nikitozeg/tinkoff-task.git
 $ mvn clean test
 $ mvn site
 ```
